@@ -1,5 +1,4 @@
 import streamlit as st
-import pycountry as pc
 import matplotlib.pyplot as plt
 import plotly.express as go
 #internal:

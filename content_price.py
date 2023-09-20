@@ -1,6 +1,5 @@
 import streamlit as st
 import eurostat
-import pycountry as pc
 from options import *
 import matplotlib.pyplot as plt
 import plotly.express as px
