@@ -17,7 +17,7 @@ click-plugins==1.1.1
 cligj==0.7.2
 cycler==0.11.0
 #debugpy @ file:///opt/concourse/worker/volumes/live/32b11d06-4d64-4ec8-497a-cf4fc97343d2/volume/debugpy_1637091821874/work
-decorator @ file:///opt/conda/conda-bld/decorator_1643638310831/work
+# decorator @ file:///opt/conda/conda-bld/decorator_1643638310831/work
 docutils==0.18.1
 #entrypoints @ file:///opt/concourse/worker/volumes/live/194c0a28-55ce-4e83-6a87-0d9f2e06ab2c/volume/entrypoints_1649926487944/work
 enum-compat==0.0.3
