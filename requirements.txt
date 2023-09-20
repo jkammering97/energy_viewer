@@ -3,7 +3,6 @@ altair==5.0.1
 astor==0.8.1
 attrs==22.1.0
 Babel==2.12.1
-backcall @ file:///home/ktietz/src/ci/backcall_1611930011877/work
 backports.zoneinfo==0.2.1
 base58==2.1.1
 blinker==1.6.2
