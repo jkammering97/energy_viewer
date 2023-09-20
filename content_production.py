@@ -1,5 +1,4 @@
 import streamlit as st
-import eurostat
 import matplotlib.pyplot as plt
 import base64
 import plotly.express as go
@@ -11,7 +10,8 @@ def show_production_content():
         with open(pdf_path, "rb") as f:
             base64_pdf = base64.b64encode(f.read()).decode("utf-8")
             pdf_data_url = f"data:application/pdf;base64,{base64_pdf}"
-            st.markdown(f'<iframe src="{pdf_data_url}" width="{width}" height="{height}"></iframe>', unsafe_allow_html=True)
+            st.markdown(f'<iframe src="{pdf_data_url}" width="{width}" height="{height}"></iframe>',
+                        unsafe_allow_html=True)
     def main():
         pdf_base_dir = "/Users/joey/Desktop/work/Master/sem1/Technology/Project/Python pdf"
         

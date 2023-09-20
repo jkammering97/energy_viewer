@@ -1,6 +1,4 @@
 import streamlit as st
-import matplotlib.pyplot as plt
-import plotly.express as go
 #internal:
 from options import *
 from content_price import *
