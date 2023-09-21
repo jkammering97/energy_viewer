@@ -1,6 +1,12 @@
 import streamlit as st
 import base64
 import os
+import pdf2image
+
+def display_pdf(pdf_path: str):
+    images = pdf2image.convert(pdf_path)
+    for img in images:
+        st.image(img)
 
 def show_production_content():
     st.title("Production Content")
