@@ -1,11 +1,20 @@
 import streamlit as st
 import base64
 import os
-import pdf2image
+# import pdf2image
+import fitz
+
+# def display_pdf(pdf_path: str):
+#     images = pdf2image.convert(pdf_path)
+#     for img in images:
+#         st.image(img)
+#   # PyMuPDF
 
 def display_pdf(pdf_path: str):
-    images = pdf2image.convert(pdf_path)
-    for img in images:
+    pdf_document = fitz.open(pdf_path)
+    for page_number in range(pdf_document.page_count):
+        page = pdf_document.load_page(page_number)
+        img = page.get_pixmap()
         st.image(img)
 
 def show_production_content():

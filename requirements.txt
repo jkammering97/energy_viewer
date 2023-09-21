@@ -115,3 +115,4 @@ watchdog==3.0.0
 xmltodict==0.13.0
 zipp==3.8.1
 pdf2image==1.16.3
+PyMuPDF==1.22.5
