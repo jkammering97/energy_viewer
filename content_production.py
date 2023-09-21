@@ -1,7 +1,6 @@
 import streamlit as st
-import matplotlib.pyplot as plt
 import base64
-import plotly.express as go
+import os
 
 def show_production_content():
     st.title("Production Content")
@@ -13,8 +12,8 @@ def show_production_content():
             st.markdown(f'<iframe src="{pdf_data_url}" width="{width}" height="{height}"></iframe>',
                         unsafe_allow_html=True)
     def main():
-        pdf_base_dir = "/Users/joey/Desktop/work/Master/sem1/Technology/Project/Python pdf"
-        
+        # pdf_base_dir = "/Users/joey/Desktop/work/Master/sem1/Technology/Project/Python pdf"
+        pdf_base_dir = os.path.join(os.getcwd(), "PDFs")
         st.title("Energy consumptions")
 
         options = ["Product", "Sector", "Household", "Transport", "Roadtransport", "Industry"]
@@ -25,23 +24,21 @@ def show_production_content():
 
         st.write(f"You are viewing the total energy supply by {selected_option} for the year {selected_radio}")
 
-        if selected_option == "Product":
-            pdf_path = f"{pdf_base_dir}/Product {selected_radio}.pdf"
+        pdf_file_mapping = {
+        "Product": f"Product {selected_radio}.pdf",
+        "Sector": f"sector {selected_radio}.pdf",
+        "Household": f"households by type of fuel {selected_radio}.pdf",
+        "Transport": f"transport {selected_radio}.pdf",
+        "Roadtransport": f"road {selected_radio}.pdf",
+        "Industry": f"industry {selected_radio}.pdf"
+        }
 
+        pdf_file_name = pdf_file_mapping.get(selected_option)
+
+        if pdf_file_name:
+            pdf_path = os.path.join(pdf_base_dir, pdf_file_name)
             display_pdf(pdf_path)
-        elif selected_option == "Sector":
-            pdf_path = f"{pdf_base_dir}/sector {selected_radio}.pdf"
-            display_pdf(pdf_path)
-        elif selected_option == "Household":
-            pdf_path = f"{pdf_base_dir}/households by type of fuel {selected_radio}.pdf"
-            display_pdf(pdf_path)
-        elif selected_option == "Transport":
-            pdf_path = f"{pdf_base_dir}/transport {selected_radio}.pdf"
-            display_pdf(pdf_path)
-        elif selected_option == "Roadtransport":
-            pdf_path = f"{pdf_base_dir}/Project/road {selected_radio}.pdf"
-            display_pdf(pdf_path)
-        elif selected_option == "Industry":
-            pdf_path = f"{pdf_base_dir}/industry {selected_radio}.pdf"
-            display_pdf(pdf_path)
+        else:
+            st.error("Selected option not recognized.")
+
     main()
