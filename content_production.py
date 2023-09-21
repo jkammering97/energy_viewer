@@ -1,14 +1,7 @@
 import streamlit as st
 import base64
 import os
-# import pdf2image
 import fitz
-
-# def display_pdf(pdf_path: str):
-#     images = pdf2image.convert(pdf_path)
-#     for img in images:
-#         st.image(img)
-#   # PyMuPDF
 
 def display_pdf(pdf_path: str):
     pdf_document = fitz.open(pdf_path)

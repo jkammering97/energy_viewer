@@ -5,7 +5,7 @@ import plotly.express as px
 import pandas as pd
 
 # internal
-from options import *
+from options import mwh_table, kwh_table, country_iso2_mapping, custom_css
 
 def show_price_content():
 
@@ -64,14 +64,14 @@ def show_price_content():
   
         if not df_melted.empty:
             constants = df_melted['nrg_cons'].unique()
-            # st.write(constants)
             selected_constant = st.sidebar.selectbox("choose a kWh consumption category:",
                                                     options= constants,
                                                     index= 0,
                                                     key= "const_select")
 
             st.sidebar.markdown(custom_css, unsafe_allow_html=True)
-            st.sidebar.markdown(legend_content, unsafe_allow_html=True)
+
+            # st.sidebar.markdown(legend_content, unsafe_allow_html=True)
 
             if selected_constant:
 
@@ -97,3 +97,10 @@ def show_price_content():
 
                 st.write(f"<em>{selected_statistic} for {country} from year: {str(year_from)} DataFrame</em>", unsafe_allow_html=True)
                 st.write(merged_df)
+
+            if selected_statistic == "Electricity prices for household consumers":
+                st.sidebar.markdown(custom_css, unsafe_allow_html=True)
+                st.sidebar.markdown(kwh_table, unsafe_allow_html=True)
+            elif selected_statistic == "Electricity prices for non-household consumers":
+                st.sidebar.markdown(custom_css, unsafe_allow_html=True)
+                st.sidebar.markdown(mwh_table, unsafe_allow_html=True)

@@ -127,4 +127,53 @@ legend_content = """
 </div>
 """
 
+kwh_table = """
+<table>
+            <tr>
+            <th>Consumption Rate-Range</th>
+        </tr>
+        <tr>
+            <td><span class="unit">k<sub>W</sub>h</span> 1000 or less</td>
+        </tr>
+        <tr>
+            <td><span class="unit">k<sub>W</sub>h</span> 2500-4999</td>
+        </tr>
+        <tr>
+            <td><span class="unit">k<sub>W</sub>h</span> 5000-14999</td>
+        </tr>
+        <tr>
+            <td><span class="unit">k<sub>W</sub>h</span> 15000 or over</td>
+        </tr>
+</table>
+"""
+
+mwh_table = """
+<table>
+            <tr>
+            <th>Consumption Rate-Range</th>
+        </tr>
+        <tr>
+            <td><span class="unit">m<sub>W</sub>h</span> 20 or less</td>
+        </tr>
+        <tr>
+            <td><span class="unit">m<sub>W</sub>h</span> 20-499</td>
+        </tr>
+        <tr>
+            <td><span class="unit">m<sub>W</sub>h</span> 500-1999</td>
+        </tr>
+        <tr>
+            <td><span class="unit">m<sub>W</sub>h</span> 2000-19999</td>
+        </tr>
+        <tr>
+            <td><span class="unit">m<sub>W</sub>h</span> 20000-69999</td>
+        </tr>
+        <tr>
+            <td><span class="unit">m<sub>W</sub>h</span> 70000-149999</td>
+        </tr>
+        <tr>
+            <td><span class="unit">m<sub>W</sub>h</span> 149999 or over</td>
+        </tr>
+       
+</table>
+"""
 
