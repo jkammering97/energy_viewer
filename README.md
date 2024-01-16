@@ -5,9 +5,10 @@ This part of the application displays data from these two statistics on eurostat
 - Electricity prices for non-household consumers
 - Electricity prices for household consumers
 
+they can be accessed here: https://wikis.ec.europa.eu/display/EUROSTATHELP/API+-+Getting+started
+
 ## production view
 This second page is aimed at displaying several PDFs related to the pricing.
-
 
 ## Installation
 
