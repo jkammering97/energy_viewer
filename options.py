@@ -67,8 +67,6 @@ custom_css = """
 </style>
 """
 
-
-# Define the legend content as an HTML table
 legend_content = """
 <div class="small-caps">
     <p><span class="unit">k<sub>W</sub>h</span>&emsp;: kilowatt-hour, a unit of energy equivalent to one kilowatt of power used for one hour.</p>

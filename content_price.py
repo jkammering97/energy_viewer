@@ -3,8 +3,6 @@ import eurostat
 import matplotlib.pyplot as plt
 import plotly.express as px
 import pandas as pd
-
-# internal
 from options import mwh_table, kwh_table, country_iso2_mapping, custom_css
 
 def show_price_content():
