@@ -77,7 +77,7 @@ def show_price_content():
                 df_long = merged_df.melt(id_vars="country",
                                         var_name="Year",
                                         value_name="Value [€/kWh]")
-                df_long = df_long.sort_values(by="Year")  # Sort the DataFrame by "Year"
+                df_long = df_long.sort_values(by="Year")
                 
                 fig = px.line(df_long,
                                 x="Year",
