@@ -68,9 +68,6 @@ def show_price_content():
                                                     key= "const_select")
 
             st.sidebar.markdown(custom_css, unsafe_allow_html=True)
-
-            # st.sidebar.markdown(legend_content, unsafe_allow_html=True)
-
             if selected_constant:
 
                 merged_df = merged_df[merged_df['nrg_cons']==selected_constant]
