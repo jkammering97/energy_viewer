@@ -20,7 +20,7 @@ def show_price_content():
         df = df.groupby('nrg_cons')[numerical_columns].sum().reset_index()
         return df
 
-    statistics = {#"Final energy consumption in households by type of fuel": "TEN00125",
+    statistics = {
     "Electricity prices for non-household consumers": "NRG_PC_205_C",
     "Electricity prices for household consumers": "NRG_PC_204_C"}
 
