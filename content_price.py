@@ -10,7 +10,6 @@ def show_price_content():
     def request_data_df(code: str,
                         country: str,
                         year_from: int):
-        # par_values = eurostat.get_par_values(code, 'geo')
         my_filter_pars = {'startPeriod': year_from,
                         'geo': country}
         df = eurostat.get_data_df(code, filter_pars=my_filter_pars)
