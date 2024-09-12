@@ -14,6 +14,15 @@ def show_production_content():
     st.title("Production Content")
 
     def display_pdf(pdf_path: str, width: int = 600, height: int = 800):
+        """display pdfs that are used in the application
+
+        :param pdf_path: _description_
+        :type pdf_path: str
+        :param width: _description_, defaults to 600
+        :type width: int, optional
+        :param height: _description_, defaults to 800
+        :type height: int, optional
+        """
         with open(pdf_path, "rb") as f:
             base64_pdf = base64.b64encode(f.read()).decode("utf-8")
             pdf_data_url = f"data:application/pdf;base64,{base64_pdf}"
