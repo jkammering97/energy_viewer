@@ -1,4 +1,5 @@
 legacy
 .pyc
 .new_tia315/
-python_tia315/
+.python_tia315/
+.newwest_tia315/
