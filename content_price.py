@@ -6,7 +6,10 @@ import pandas as pd
 from options import mwh_table, kwh_table, country_iso2_mapping, custom_css
 
 def show_price_content():
-
+    """shows content on price using eurostats API
+    * Electricity prices for non-household consumers
+    * Electricity prices for household consumers
+    """
     def request_data_df(code: str,
                         country: str,
                         year_from: int):

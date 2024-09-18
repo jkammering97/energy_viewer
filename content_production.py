@@ -4,6 +4,8 @@ import os
 import fitz
 
 def display_pdf(pdf_path: str):
+    """displays PDF files stored in a git repository
+    """
     pdf_document = fitz.open(pdf_path)
     for page_number in range(pdf_document.page_count):
         page = pdf_document.load_page(page_number)
@@ -15,13 +17,6 @@ def show_production_content():
 
     def display_pdf(pdf_path: str, width: int = 600, height: int = 800):
         """display pdfs that are used in the application
-
-        :param pdf_path: _description_
-        :type pdf_path: str
-        :param width: _description_, defaults to 600
-        :type width: int, optional
-        :param height: _description_, defaults to 800
-        :type height: int, optional
         """
         with open(pdf_path, "rb") as f:
             base64_pdf = base64.b64encode(f.read()).decode("utf-8")
