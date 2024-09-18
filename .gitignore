@@ -1,3 +1,4 @@
 legacy
 .pyc
-venv/
+.new_tia315/
+python_tia315/
