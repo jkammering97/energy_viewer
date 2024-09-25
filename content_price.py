@@ -3,13 +3,23 @@ import eurostat
 import matplotlib.pyplot as plt
 import plotly.express as px
 import pandas as pd
-from options import mwh_table, kwh_table, country_iso2_mapping, custom_css
+from options import country_iso2_mapping
 
 def show_price_content():
     """shows content on price using eurostats API
     * Electricity prices for non-household consumers
     * Electricity prices for household consumers
     """
+    def load_css():
+        with open('custom_css.css', 'r') as file:
+            custom_css = file.read()
+        return custom_css
+    
+    def load_html(path):
+        with open(path, 'r') as file:
+            table = file.read()
+        return table
+    
     def request_data_df(code: str,
                         country: str,
                         year_from: int):
@@ -35,8 +45,8 @@ def show_price_content():
                                     key= "stat_select")
 
     year_from = st.sidebar.slider("select from which year on to collect:",
-    2015,
-    2022)
+                                2015,
+                                2022)
 
     selected_countries = st.multiselect("Select Countries", country_iso2_mapping)
     fig = px.line()
@@ -56,8 +66,7 @@ def show_price_content():
     if dfs: 
         merged_df = pd.concat(dfs, ignore_index=True)
         df_melted = pd.melt(merged_df,
-                        id_vars=['country',
-                                    'nrg_cons'],
+                        id_vars=['country', 'nrg_cons'],
                         var_name='Year',
                         value_name='Value [€/kWh]')
   
@@ -68,7 +77,7 @@ def show_price_content():
                                                     index= 0,
                                                     key= "const_select")
 
-            st.sidebar.markdown(custom_css, unsafe_allow_html=True)
+            st.sidebar.markdown(load_css(), unsafe_allow_html=True)
             if selected_constant:
 
                 merged_df = merged_df[merged_df['nrg_cons']==selected_constant]
@@ -94,9 +103,11 @@ def show_price_content():
                 st.write(f"<em>{selected_statistic} for {country} from year: {str(year_from)} DataFrame</em>", unsafe_allow_html=True)
                 st.write(merged_df)
 
+            custom_css = load_css()
+
             if selected_statistic == "Electricity prices for household consumers":
                 st.sidebar.markdown(custom_css, unsafe_allow_html=True)
-                st.sidebar.markdown(kwh_table, unsafe_allow_html=True)
+                st.sidebar.markdown(load_html("kwh_table.html"), unsafe_allow_html=True)
             elif selected_statistic == "Electricity prices for non-household consumers":
                 st.sidebar.markdown(custom_css, unsafe_allow_html=True)
-                st.sidebar.markdown(mwh_table, unsafe_allow_html=True)
+                st.sidebar.markdown(load_html("mwh_table.html"), unsafe_allow_html=True)
