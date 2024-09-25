@@ -3,7 +3,7 @@ import eurostat
 import matplotlib.pyplot as plt
 import plotly.express as px
 import pandas as pd
-from options import country_iso2_mapping
+from country_mapping import *
 
 def show_price_content():
     """shows content on price using eurostats API
