@@ -4,7 +4,7 @@ import os
 import fitz
 
 def display_pdf(pdf_path: str):
-    """displays PDF files stored in a git repository
+    """displays PDF files stored in a git repository,
     """
     pdf_document = fitz.open(pdf_path)
     for page_number in range(pdf_document.page_count):
