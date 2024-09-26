@@ -11,6 +11,7 @@ def display_pdf(pdf_path: str):
         page = pdf_document.load_page(page_number)
         img = page.get_pixmap()
         st.image(img)
+        # this is a comment
 
 def show_production_content():
     st.title("Production Content")
