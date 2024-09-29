@@ -1,6 +1,9 @@
 # Energy Viewer
 
-Welcome to this interactive Application about global electricity prices. It was created in a two week course at the University of Gothenburg. You can access the application through this link: https://newrepo-khs69mdaovscycxwngywtm.streamlit.app
+Welcome to this interactive Application about global electricity prices. It was created in a two week course at the University of Gothenburg. You can access the application through this link: https://newrepo-khs69mdaovscycxwngywtm.streamlit.app The aim is to display information from the eurostat database and make an analysis possible for business owners as well as private households. The dashboard offers to look at different dimensions of consumptions, which define the electricity prices. The prices are classified and grouped based on these consumption categories. **please view the production page in a non-chromium based browser, for instance Firefox. There is an error displaying PDFs on chromium-based browsers (chrome, opera, brave, edge etc.)
+
+
+
 
 ## price view
 This part of the application displays data from these two statistics on eurostat.com:
