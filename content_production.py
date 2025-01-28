@@ -14,6 +14,8 @@ def display_pdf(pdf_path: str):
         # this is a comment
 
 def show_production_content():
+    """showing produciton content on webpage
+    """
     st.title("Production Content")
 
     def display_pdf(pdf_path: str, width: int = 600, height: int = 800):
